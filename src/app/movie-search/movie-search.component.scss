@@ -1,0 +1,15 @@
+.movie-search {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movie-card {
+  width: 200px;
+  margin: 10px;
+}

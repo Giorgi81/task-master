@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.current-day {
+  background-color: #4caf50 !important; /* Green for current day */
+  color: white;
+}
+
+.weekend-day {
+  background-color: #ffccbc; /* Light red for weekends */
+  color: black;
+}
+
+.other-day {
+  background-color: #f1f1f1; /* Light gray for other days */
+  color: black;
+}

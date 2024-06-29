@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <span>Angular Material with FormatDate Pipe</span>
+</mat-toolbar>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Date Formatting Example</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Formatted Date: {{ '2023-08-10T09:42:34.0734574Z' | formatDate }}</p>
+    <p>Original String: {{ 'Not a date string' | formatDate }}</p>
+  </mat-card-content>
+</mat-card>
+

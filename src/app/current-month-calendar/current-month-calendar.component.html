@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Current Month Calendar</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <thead>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let week of weeks">
+        <td *ngFor="let day of week" [ngClass]="{
+            'current-day': day.day === currentDay,
+            'weekend-day': day.weekend && day.day !== currentDay,
+            'other-day': day.day !== 0 && day.day !== currentDay && !day.weekend
+          }">
+          {{ day.day || '' }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
