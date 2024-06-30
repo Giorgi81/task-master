@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
-  ...appConfig,
   providers: [
     provideRouter(routes),
     importProvidersFrom(HttpClientModule, BrowserAnimationsModule)

@@ -2,8 +2,18 @@
 
 <div id="main">
   <div class="search-container">
-    <input type="text" id="search-bar" placeholder="Search for a movie...">
-    <button id="search-button">Search</button>
+    <input type="text" id="search-bar" placeholder="Search for a movie..." [(ngModel)]="searchTerm">
+    <button id="search-button" (click)="searchMovies()">Search</button>
+  </div>
+  <div class="line">
+    <div class="movie">
+      <mat-card *ngFor="let movie of movies">
+        <mat-card-header>
+          <mat-card-title><button class="card-title">{{ movie.title }}</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="movie.posterUrl" alt="{{ movie.title }}">
+      </mat-card>
+    </div>
   </div>
   <div class="line">
     <div class="movie">

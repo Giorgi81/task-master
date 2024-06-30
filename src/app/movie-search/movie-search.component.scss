@@ -47,12 +47,12 @@ header {
 .movie {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
   justify-content: center;
 }
 
 mat-card {
-  width: 200px;
+  width: 250px;
 }
 
 mat-card img {
@@ -80,3 +80,5 @@ th, td {
   padding: 10px;
   text-align: left;
 }
+
+

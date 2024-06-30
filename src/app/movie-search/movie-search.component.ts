@@ -1,12 +1,13 @@
-import {Component} from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import { ApiService } from '../api.service';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {ApiService} from "../api.service";
+import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 
 @Component({
   selector: 'app-movie-search',
@@ -20,19 +21,20 @@ import {ApiService} from "../api.service";
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatGridList,
+    MatGridTile
   ],
   templateUrl: './movie-search.component.html',
   styleUrls: ['./movie-search.component.scss']
 })
-
-export class MovieSearchComponent {
+export class MovieSearchComponent implements OnInit {
   searchTerm: string = '';
   movies: any[] = [];
-  displayedColumns: string[] = ['title', 'year', 'type'];
 
-  constructor(private apiService: ApiService) {
-  }
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit() {}
 
   searchMovies() {
     if (this.searchTerm.trim()) {
@@ -40,10 +42,12 @@ export class MovieSearchComponent {
         (data: any) => {
           this.movies = data.results || [];
         },
-        (error) => {
-          console.error(error);
+        (error: any) => {
+          console.error('Error fetching movies:', error);
         }
       );
+    } else {
+      this.movies = [];
     }
   }
 }
