@@ -1,21 +1,70 @@
-<div class="movie-search">
-  <mat-card>
-    <mat-card-title>Movie Search</mat-card-title>
-    <mat-card-content>
-      <mat-form-field appearance="fill">
-        <mat-label>Movie Title</mat-label>
-        <input matInput [(ngModel)]="searchTitle" placeholder="Enter movie title">
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="searchMovies()">Search</button>
-    </mat-card-content>
-  </mat-card>
+<header></header>
 
-  <div class="movie-list">
-    <mat-card *ngFor="let movie of movies" class="movie-card">
-      <mat-card-title>{{ movie.title }}</mat-card-title>
-      <mat-card-content>
-        <p>{{ movie.description }}</p>
-      </mat-card-content>
-    </mat-card>
+<div id="main">
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for a movie...">
+    <button id="search-button">Search</button>
+  </div>
+  <div class="line">
+    <div class="movie">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/products/d3a38cf25552ce4dd7502f83464d91e3_8d963fcc-98d4-4078-b799-35c2fd25475a_480x.progressive.jpg?v=1573652476" alt="Jaws">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/files/ItemP5532_jpg_480x.progressive.jpg?v=1697202212" alt="Jaws">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/products/54440_480x.progressive.jpg?v=1646167720" alt="Jaws">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/files/darkknight.building.24x36_20e90057-f673-4cc3-9ce7-7b0d3eeb7d83_480x.progressive.jpg?v=1707491191" alt="Jaws">
+      </mat-card>
+    </div>
+  </div>
+  <div class="line">
+    <div class="movie">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/products/0cc34c96039795917466ef4197350715_201bf82b-af1c-42ec-9339-919768fe79e0_480x.progressive.jpg?v=1573654933" alt="Jaws">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/files/moana-2_c6chd7yn_480x.progressive.jpg?v=1717698868" alt="Jaws">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://cdn.shopify.com/s/files/1/0057/3728/3618/files/scan008_e75f76df-347b-43da-8290-27fa217d029f_500x749.jpg?v=1713985214" alt="Jaws">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><button class="card-title">Jaws</button></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://www.movieposters.com/cdn/shop/files/horizon-an-american-saga_cn3acrcx_480x.progressive.jpg?v=1718806005" alt="Jaws">
+      </mat-card>
+    </div>
   </div>
 </div>
