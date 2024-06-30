@@ -30,12 +30,10 @@ export class CurrentMonthCalendarComponent implements OnInit {
     let dayCounter = 1;
     let dayOfWeek = firstDayOfMonth;
 
-    // Fill the first week with leading empty days
     for (let i = 0; i < firstDayOfMonth; i++) {
       week.push({ day: 0, weekend: false });
     }
 
-    // Fill the days of the month
     while (dayCounter <= daysInMonth) {
       week.push({ day: dayCounter, weekend: dayOfWeek === 0 || dayOfWeek === 6 });
       dayCounter++;
@@ -48,7 +46,6 @@ export class CurrentMonthCalendarComponent implements OnInit {
       }
     }
 
-    // Fill the last week with trailing empty days
     if (week.length > 0) {
       while (week.length < 7) {
         week.push({ day: 0, weekend: false });
