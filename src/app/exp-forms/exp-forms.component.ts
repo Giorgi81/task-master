@@ -7,7 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {NgForOf, NgIf} from "@angular/common";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { Company } from "./type";
-import {MatNativeDateModule, provideNativeDateAdapter} from '@angular/material/core';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @Component({
   selector: 'app-exp-forms',
@@ -73,7 +73,6 @@ export class ExpFormsComponent {
         dateTo: this.positionForm.value.toDate
       });
 
-      // Reset forms and state after adding
       this.jobForm.reset();
       this.positionForm.reset();
       this.addJob = false;

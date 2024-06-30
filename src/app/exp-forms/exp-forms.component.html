@@ -3,7 +3,6 @@
     <button mat-flat-button color="primary" (click)="add()">Add Job</button>
   </div>
 
-  <!-- Job Form -->
   <form *ngIf="addJob" [formGroup]="jobForm" (ngSubmit)="addPost()">
     <mat-form-field>
       <mat-label>Company name</mat-label>
@@ -24,7 +23,6 @@
 
     <button mat-flat-button color="primary" (click)="addPos()">Add Position</button>
 
-    <!-- Position Form -->
     <form *ngIf="addPosition" [formGroup]="positionForm" (ngSubmit)="addPost()">
       <mat-form-field>
         <mat-label>Enter position name</mat-label>
@@ -67,7 +65,6 @@
     </form>
   </form>
 
-  <!-- Display Added Jobs -->
   <div *ngIf="arr.length > 0">
     <div class="job-card" *ngFor="let company of arr; let i = index">
       <mat-card>
