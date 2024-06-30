@@ -9,6 +9,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { Company } from "./type";
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from "@angular/material/select";
+import {JobService} from "../job.service";
 
 @Component({
   selector: 'app-exp-forms',
@@ -30,15 +31,14 @@ import {MatSelectModule} from "@angular/material/select";
   templateUrl: './exp-forms.component.html',
   styleUrl: './exp-forms.component.scss'
 })
-export class ExpFormsComponent {
-
+export class ExpFormsComponent implements OnInit {
   arr: Company[] = [];
   jobForm: FormGroup;
   positionForm: FormGroup;
   addJob = false;
   addPosition = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private jobService: JobService) {
     this.jobForm = this.fb.group({
       companyName: ['', Validators.required],
       companyWeb: ['', Validators.required],
@@ -53,7 +53,21 @@ export class ExpFormsComponent {
       toDate: ['', Validators.required]
     });
   }
+  ngOnInit() {
+    this.loadJobs();
+  }
 
+  loadJobs() {
+    this.jobService.getJobs().subscribe(
+      jobs => {
+        this.arr = jobs;
+        console.log('Jobs loaded successfully', this.arr);
+      },
+      error => {
+        console.error('Error loading jobs', error);
+      }
+    );
+  }
   add() {
     this.addJob = true;
   }
@@ -75,6 +89,10 @@ export class ExpFormsComponent {
         dateTo: this.positionForm.value.toDate
       });
 
+      this.jobService.saveJobs(this.arr).subscribe(() => {
+        console.log('Jobs saved successfully');
+      });
+
       this.jobForm.reset();
       this.positionForm.reset();
       this.addJob = false;
@@ -84,5 +102,8 @@ export class ExpFormsComponent {
 
   deleteJob(index: number) {
     this.arr.splice(index, 1);
+    this.jobService.saveJobs(this.arr).subscribe(() => {
+      console.log('Job deleted successfully');
+    });
   }
 }
