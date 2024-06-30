@@ -19,4 +19,6 @@ import {FormatDatePipe} from "./format-date.pipe";
 })
 export class FormatDateComponent {
 
+  date : string = new Date().toISOString()
+
 }

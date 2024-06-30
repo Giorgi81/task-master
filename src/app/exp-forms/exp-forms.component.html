@@ -1,21 +1,9 @@
 <div class="main">
-
-
   <div class="btn-box" >
     <button mat-flat-button color="primary"  (click)="add()">Add Job</button>
-
-
   </div>
 
-
-
-
       <form *ngIf="addJob">
-
-
-
-
-
         <mat-form-field  >
           <mat-label >Compnay name</mat-label>
           <input matInput [(ngModel)]="applicationInfo.companyName" name="companyName" >
@@ -24,21 +12,17 @@
         <mat-form-field>
           <mat-label>Compnay website URL</mat-label>
           <input matInput [(ngModel)]="applicationInfo.companyUrl" name="url" >
-
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Compnay description</mat-label>
+          <mat-label>Company description</mat-label>
           <textarea matInput [(ngModel)]="applicationInfo.companyDesc" name="desc" > </textarea>
         </mat-form-field>
 
         <button mat-flat-button color="primary" (click)="addPos()">Add Postition</button>
-
-
         <form *ngIf="addPosition">
 
-
-          <mat-form-field  >
+          <mat-form-field>
             <mat-label >Enter postition name</mat-label>
             <input matInput [(ngModel)]="applicationInfo.posName" name="compName" >
           </mat-form-field>
@@ -71,12 +55,8 @@
             </mat-form-field>
           </div>
 
-
           <button mat-flat-button color="primary" (click)="addPost()">Add</button>
-
-
         </form>
-
       </form>
 
   <div *ngIf="arr.length > 0">
@@ -92,8 +72,6 @@
       <p><strong>Date To:</strong> {{ company.dateTo }}</p>
     </div>
   </div>
-
-
 </div>
 
 

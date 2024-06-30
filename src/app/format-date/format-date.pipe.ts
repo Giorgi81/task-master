@@ -7,7 +7,7 @@ import {DatePipe} from "@angular/common";
 })
 export class FormatDatePipe implements PipeTransform {
 
-  transform(value: any): any {
+  transform(value: string): any {
     const date = new Date(value);
     if (!isNaN(date.getTime())) {
       const datePipe = new DatePipe('en-US');
