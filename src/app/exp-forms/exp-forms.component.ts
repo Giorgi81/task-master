@@ -8,6 +8,7 @@ import {NgForOf, NgIf} from "@angular/common";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { Company } from "./type";
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatSelectModule} from "@angular/material/select";
 
 @Component({
   selector: 'app-exp-forms',
@@ -22,6 +23,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule,
     NgForOf,
   ],
 

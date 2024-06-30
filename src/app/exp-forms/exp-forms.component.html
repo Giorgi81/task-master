@@ -3,6 +3,7 @@
     <button mat-flat-button color="primary" (click)="add()">Add Job</button>
   </div>
 
+  <!-- Job Form -->
   <form *ngIf="addJob" [formGroup]="jobForm" (ngSubmit)="addPost()">
     <mat-form-field>
       <mat-label>Company name</mat-label>
@@ -23,6 +24,7 @@
 
     <button mat-flat-button color="primary" (click)="addPos()">Add Position</button>
 
+    <!-- Position Form -->
     <form *ngIf="addPosition" [formGroup]="positionForm" (ngSubmit)="addPost()">
       <mat-form-field>
         <mat-label>Enter position name</mat-label>
@@ -31,14 +33,18 @@
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Enter position level</mat-label>
-        <input matInput formControlName="posLevel" required>
-        <mat-error *ngIf="positionForm.get('posLevel')?.hasError('required')">Position level is required</mat-error>
+        <mat-label>Enter position description</mat-label>
+        <textarea matInput formControlName="posDesc"></textarea>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Enter position description</mat-label>
-        <textarea matInput formControlName="posDesc"></textarea>
+        <mat-label>Position level</mat-label>
+        <mat-select formControlName="posLevel" required>
+          <mat-option value="Junior">Junior</mat-option>
+          <mat-option value="Middle">Middle</mat-option>
+          <mat-option value="Senior">Senior</mat-option>
+        </mat-select>
+        <mat-error *ngIf="positionForm.get('posLevel')?.hasError('required')">Position level is required</mat-error>
       </mat-form-field>
 
       <div>
@@ -65,6 +71,7 @@
     </form>
   </form>
 
+  <!-- Display Added Jobs -->
   <div *ngIf="arr.length > 0">
     <div class="job-card" *ngFor="let company of arr; let i = index">
       <mat-card>
