@@ -1,0 +1,11 @@
+article {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 20px;
+
+  button {
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+}

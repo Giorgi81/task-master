@@ -1,0 +1,20 @@
+<article>
+  <mat-form-field appearance="outline">
+    <mat-label>word</mat-label>
+    <input matInput [formControl]="wordFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>words</mat-label>
+    <input matInput [formControl]="wordsFormControl">
+  </mat-form-field>
+
+  <button (click)="matchWithPercent()" mat-button>compare</button>
+</article>
+
+
+<article>
+  @if (percents.length) {
+    <span style="font-size: 16px"> {{ percents }}</span>
+  }
+</article>
